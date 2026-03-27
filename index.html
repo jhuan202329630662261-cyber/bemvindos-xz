@@ -1,1 +1,501 @@
 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Santana Santos | Instalação e Manutenção Elétrica</title>
+    <!-- Bootstrap 5 CSS + Icons + Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts para tipografia moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+            scroll-behavior: smooth;
+        }
+
+        /* Cores personalizadas (identidade visual) */
+        :root {
+            --primary-electric: #0f3b5c;
+            --primary-electric-light: #1e5a7d;
+            --secondary-orange: #e67e22;
+            --secondary-orange-dark: #b85e0a;
+            --gray-bg: #f1f5f9;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary-electric);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 0.8rem 0;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+            color: white !important;
+        }
+        .navbar-brand i {
+            color: #fbbf24;
+            margin-right: 8px;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-link:hover {
+            color: #fbbf24 !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0b2b42 0%, #134b6b 100%);
+            color: white;
+            padding: 5rem 0 4rem;
+            border-bottom: 5px solid var(--secondary-orange);
+        }
+        .hero h1 {
+            font-weight: 800;
+            font-size: 3rem;
+        }
+        .hero .badge {
+            background-color: var(--secondary-orange);
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+        .btn-electric {
+            background-color: var(--secondary-orange);
+            border: none;
+            padding: 12px 28px;
+            font-weight: 600;
+            transition: 0.2s;
+            color: white;
+        }
+        .btn-electric:hover {
+            background-color: var(--secondary-orange-dark);
+            transform: translateY(-2px);
+            color: white;
+        }
+        .btn-outline-light-custom {
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            padding: 10px 24px;
+            font-weight: 500;
+        }
+        .btn-outline-light-custom:hover {
+            background: white;
+            color: var(--primary-electric);
+        }
+
+        /* Seções gerais */
+        .section-title {
+            font-weight: 700;
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary-orange);
+            border-radius: 3px;
+        }
+        .card-service {
+            border: none;
+            border-radius: 1.25rem;
+            transition: all 0.25s ease;
+            box-shadow: var(--card-shadow);
+            background: white;
+            height: 100%;
+        }
+        .card-service:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.12);
+        }
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background-color: #eef2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+        .icon-circle i {
+            font-size: 2.2rem;
+            color: var(--primary-electric);
+        }
+        .info-card {
+            background: white;
+            border-radius: 1.25rem;
+            transition: 0.2s;
+            height: 100%;
+            border: 1px solid #e2e8f0;
+        }
+        .bg-soft-orange {
+            background-color: #fff7ed;
+        }
+        footer {
+            background-color: #0c2e44;
+            color: #cbd5e1;
+        }
+        .footer-link {
+            color: #facc15;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+            color: white;
+        }
+        .list-unstyled li {
+            margin-bottom: 0.5rem;
+        }
+        .social-icon {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            color: #cbd5e1;
+            transition: 0.2s;
+        }
+        .social-icon:hover {
+            color: #facc15;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navegação principal -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-lightning-charge-fill"></i> Gabriel Santana Santos
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto gap-2">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                <li class="nav-item"><a class="nav-link" href="#dados-cnpj">Empresa</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section / Início -->
+<section id="inicio" class="hero">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+                <span class="badge mb-3"><i class="bi bi-shield-check"></i> Mais de 8 anos de excelência</span>
+                <h1 class="mb-3">Instalação e Manutenção Elétrica com Segurança e Qualidade</h1>
+                <p class="lead mb-4">Soluções completas para residências, comércios e indústrias. Atendimento rápido, profissionais credenciados e total compromisso com a norma técnica.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#contato" class="btn btn-electric"><i class="bi bi-whatsapp"></i> Solicite um orçamento</a>
+                    <a href="#servicos" class="btn btn-outline-light-custom"><i class="bi bi-tools"></i> Nossos serviços</a>
+                </div>
+                <div class="mt-4 d-flex gap-4 flex-wrap">
+                    <div><i class="bi bi-check-circle-fill text-warning"></i> <strong>Atendimento 24h</strong> (emergências)</div>
+                    <div><i class="bi bi-check-circle-fill text-warning"></i> <strong>Garantia</strong> nos serviços</div>
+                    <div><i class="bi bi-check-circle-fill text-warning"></i> <strong>Laudo técnico</strong> e ART</div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <i class="bi bi-plug-fill" style="font-size: 8rem; opacity: 0.9; color: #facc15;"></i>
+                <h4 class="mt-2"><i class="bi bi-star-fill text-warning"></i> Confiança que ilumina</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Serviços principais -->
+<section id="servicos" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title" style="display: inline-block;">Nossos Serviços Elétricos</h2>
+            <p class="text-secondary mt-3">Soluções personalizadas para cada necessidade com tecnologia e segurança</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service p-4">
+                    <div class="icon-circle"><i class="bi bi-brightness-high"></i></div>
+                    <h4><i class="bi bi-lightbulb"></i> Instalações completas</h4>
+                    <p>Projeto e execução de instalações elétricas residenciais, comerciais e prediais, seguindo normas NR-10 e NBR 5410.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service p-4">
+                    <div class="icon-circle"><i class="bi bi-wrench"></i></div>
+                    <h4><i class="bi bi-arrow-repeat"></i> Manutenção corretiva/preventiva</h4>
+                    <p>Diagnóstico preciso, troca de disjuntores, quadros de luz, identificação de curto-circuitos e falhas.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service p-4">
+                    <div class="icon-circle"><i class="bi bi-house-door"></i></div>
+                    <h4><i class="bi bi-diagram-3"></i> Projetos elétricos & laudos</h4>
+                    <p>Elaboração de projetos, laudos técnicos, inspeção predial e certificações para imóveis novos e reformas.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service p-4">
+                    <div class="icon-circle"><i class="bi bi-lightning-charge"></i></div>
+                    <h4><i class="bi bi-solar-panel"></i> Energia solar & SPDA</h4>
+                    <p>Instalação de sistemas fotovoltaicos, para- raios (SPDA) e aterramento industrial.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service p-4">
+                    <div class="icon-circle"><i class="bi bi-clipboard-check"></i></div>
+                    <h4><i class="bi bi-shield-lock"></i> Automação e segurança</h4>
+                    <p>Automação residencial, câmeras, cercas elétricas, controle de iluminação inteligente.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service p-4">
+                    <div class="icon-circle"><i class="bi bi-calculator"></i></div>
+                    <h4><i class="bi bi-cash-stack"></i> Laudo de eficiência energética</h4>
+                    <p>Consultoria para redução de consumo, substituição de equipamentos e adequação tarifária.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frases e Diferenciais com cores -->
+<section class="bg-soft-orange py-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <i class="bi bi-shield-fill-check fs-1" style="color: var(--secondary-orange);"></i>
+                <h5 class="mt-3 fw-bold">Segurança em primeiro lugar</h5>
+                <p class="text-secondary">Equipamentos de EPI, treinamentos e respeito às normas regulamentadoras.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-stopwatch fs-1" style="color: var(--secondary-orange);"></i>
+                <h5 class="mt-3 fw-bold">Agilidade no atendimento</h5>
+                <p class="text-secondary">Emergências resolvidas em até 2h em regiões atendidas, garantia de rapidez.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-people-fill fs-1" style="color: var(--secondary-orange);"></i>
+                <h5 class="mt-3 fw-bold">Equipe especializada</h5>
+                <p class="text-secondary">Eletricistas certificados, com experiência comprovada e treinamento contínuo.</p>
+            </div>
+        </div>
+        <div class="mt-4 text-center">
+            <p class="fst-italic fs-5"><i class="bi bi-quote"></i> “Eletricidade bem-feita evita acidentes e traz economia. Conte com quem entende do sistema à segurança.” <i class="bi bi-quote"></i></p>
+            <p class="fw-semibold">— Gabriel Santana Santos, Responsável Técnico</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sobre a empresa / Dados institucionais e resumo -->
+<section id="sobre" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="section-title">Sobre <span style="color: var(--primary-electric);">Gabriel Santana Santos</span></h2>
+                <p class="lead">Referência em instalações elétricas no litoral paulista e região metropolitana, com mais de 8 anos de atuação e clientes satisfeitos.</p>
+                <p>Desde 2017, entregamos serviços com pontualidade, transparência e compromisso técnico. Nossa filosofia é combinar <strong>inovação, segurança e respeito</strong> aos prazos. Realizamos desde pequenos reparos até grandes projetos industriais, sempre prezando pela excelência.</p>
+                <div class="mt-3 d-flex gap-3 flex-wrap">
+                    <div><i class="bi bi-trophy-fill text-warning"></i> +1.200 projetos executados</div>
+                    <div><i class="bi bi-building"></i> Obras residenciais e comerciais</div>
+                    <div><i class="bi bi-card-checklist"></i> 100% regularizada</div>
+                </div>
+                <div class="mt-4">
+                    <a href="#contato" class="btn btn-electric"><i class="bi bi-envelope-paper"></i> Solicitar atendimento</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="info-card p-4">
+                    <h5 class="fw-bold"><i class="bi bi-patch-check-fill text-success"></i> Dados institucionais rápidos</h5>
+                    <hr>
+                    <p><i class="bi bi-building"></i> <strong>Razão Social:</strong> Gabriel Santana Santos LTDA</p>
+                    <p><i class="bi bi-star-fill text-warning"></i> <strong>Nome Fantasia:</strong> Gabriel Santana Santos</p>
+                    <p><i class="bi bi-calendar-check"></i> <strong>Abertura:</strong> 17/04/2017 • <strong>8 anos, 11 meses e 10 dias de experiência</strong></p>
+                    <p><i class="bi bi-briefcase"></i> <strong>Porte:</strong> Empresa de Pequeno Porte | <strong>Natureza:</strong> Sociedade Empresária Limitada</p>
+                    <p><i class="bi bi-calculator-fill"></i> <strong>Capital Social:</strong> R$ 93.700,00 | <strong>Simples Nacional</strong> desde 04/2017</p>
+                    <p><span class="badge bg-success">Situação Cadastral: ATIVA</span> <span class="badge bg-info ms-2">Matriz</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dados completos da empresa - Seção detalhada CNPJ e contato -->
+<section id="dados-cnpj" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="section-title" style="display: inline-block;">Informações Legais e Registro</h2>
+            <p class="mt-3 text-secondary">Transparência total com nossos clientes e parceiros</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="p-4 border rounded-4 h-100 shadow-sm bg-light">
+                    <i class="bi bi-file-text-fill fs-2 mb-3" style="color: var(--primary-electric);"></i>
+                    <h5><i class="bi bi-qr-code"></i> CNPJ e Inscrições</h5>
+                    <p><strong>CNPJ:</strong> 27.538.323/0001-90<br> <span class="small text-muted">27538323000190</span></p>
+                    <p><strong>Inscrição Estadual SP:</strong> 633.752.753.112</p>
+                    <p><strong>Optante pelo Simples Nacional:</strong> Sim (desde 17/04/2017)<br> <strong>MEI:</strong> Não</p>
+                    <p><strong>Capital Social:</strong> R$ 93.700,00</p>
+                    <p><strong>Data Situação Cadastral:</strong> 17/04/2017 (Ativa)</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-4 border rounded-4 h-100 shadow-sm">
+                    <i class="bi bi-geo-alt-fill fs-2 mb-3" style="color: var(--secondary-orange);"></i>
+                    <h5><i class="bi bi-pin-map"></i> Localização e Atendimento</h5>
+                    <p><strong>Logradouro:</strong> Rua Teixeira de Freitas, 17 - Apt 35<br> CEP: (Região metropolitana da Baixada Santista)</p>
+                    <p><strong>Horário de atendimento:</strong> Segunda a Sexta, 8h às 18h | Emergências 24h</p>
+                    <hr>
+                    <h5><i class="bi bi-headset"></i> Contato Direto</h5>
+                    <p><i class="bi bi-telephone-fill"></i> <strong>Telefone:</strong> <a href="tel:+551338770483" class="text-decoration-none">(13) 3877-0483</a> <a href="tel:+551338770483" class="btn btn-sm btn-outline-secondary ms-2"><i class="bi bi-telephone"></i> Ligar</a></p>
+                    <p><i class="bi bi-envelope-fill"></i> <strong>E-mail:</strong> <a href="mailto:contato@duoscontabilidade.com.br" class="text-decoration-none">contato@duoscontabilidade.com.br</a> <a href="mailto:contato@duoscontabilidade.com.br" class="btn btn-sm btn-outline-secondary ms-2"><i class="bi bi-envelope"></i> Enviar E-mail</a></p>
+                    <div class="mt-2 alert alert-warning p-2 small"><i class="bi bi-info-circle"></i> Atendemos também via WhatsApp para orçamento rápido.</div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="p-3 rounded-3 text-center" style="background: #eef2ff;">
+                    <i class="bi bi-check2-circle fs-4 me-2 text-success"></i> Empresa registrada sob a Lei Complementar 123/2006 – Simples Nacional. Situação fiscal regular, pronta para emissão de notas fiscais eletrônicas.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frases e depoimento extra com ícone -->
+<section class="py-5" style="background: linear-gradient(120deg, #e2e8f0, #ffffff);">
+    <div class="container text-center">
+        <i class="bi bi-megaphone-fill fs-1" style="color: #e67e22;"></i>
+        <h3 class="mt-2 fw-semibold">Excelência em cada conexão</h3>
+        <p class="col-md-8 mx-auto fs-5">“Profissionalismo, pontualidade e segurança. Nossa missão é garantir que sua energia elétrica funcione perfeitamente sem riscos ou dores de cabeça.”</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+            <span class="badge bg-dark p-2"><i class="bi bi-shield-check"></i> Certificação NR-10</span>
+            <span class="badge bg-dark p-2"><i class="bi bi-award"></i> Responsabilidade Técnica</span>
+            <span class="badge bg-dark p-2"><i class="bi bi-chat-quote"></i> +300 avaliações positivas</span>
+        </div>
+    </div>
+</section>
+
+<!-- Contato + Mapa resumido (Localização) -->
+<section id="contato" class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <h2 class="section-title">Entre em contato</h2>
+                <p class="mb-4">Solicite um orçamento sem compromisso, tire dúvidas técnicas ou agende uma visita. Nossa equipe está pronta para atender você com excelência.</p>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="bi bi-telephone-inbound fs-5 me-3" style="color: var(--secondary-orange);"></i> <strong>Telefone:</strong> (13) 3877-0483</li>
+                    <li class="mb-3"><i class="bi bi-whatsapp fs-5 me-3" style="color: #25D366;"></i> <strong>WhatsApp:</strong> (13) 98777-0483 (comercial)</li>
+                    <li class="mb-3"><i class="bi bi-envelope fs-5 me-3"></i> <strong>E-mail:</strong> contato@duoscontabilidade.com.br</li>
+                    <li class="mb-3"><i class="bi bi-geo-alt fs-5 me-3"></i> <strong>Endereço:</strong> Rua Teixeira de Freitas, 17 - Apt 35, Santos/SP</li>
+                </ul>
+                <div class="mt-4">
+                    <a href="https://wa.me/551398770483?text=Olá%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento%20elétrico" target="_blank" class="btn btn-success rounded-pill px-4"><i class="bi bi-whatsapp"></i> Falar no WhatsApp</a>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card border-0 shadow p-4 rounded-4">
+                    <h5><i class="bi bi-envelope-paper"></i> Envie uma mensagem rápida</h5>
+                    <form action="#" method="post">
+                        <div class="row mt-3">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-control" placeholder="Seu nome">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Telefone</label>
+                                <input type="tel" class="form-control" placeholder="(00) 00000-0000">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" class="form-control" placeholder="contato@exemplo.com">
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label class="form-label">Mensagem / Tipo de serviço</label>
+                                <textarea rows="3" class="form-control" placeholder="Descreva sua necessidade elétrica..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-electric w-100" type="button" onclick="alert('Obrigado! Retornaremos em breve. (Demonstração)')"><i class="bi bi-send"></i> Enviar mensagem</button>
+                                <p class="small text-muted mt-2">Se preferir, ligue diretamente: (13) 3877-0483</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Rodapé com todos os dados legais e redes sociais -->
+<footer class="pt-5 pb-4">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-md-4">
+                <h5 class="text-white mb-3"><i class="bi bi-lightning-charge-fill text-warning"></i> Gabriel Santana Santos</h5>
+                <p>Instalação e manutenção elétrica com segurança, tecnologia e compromisso. Referência desde 2017.</p>
+                <div>
+                    <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-white">Links Rápidos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#inicio" class="footer-link">Início</a></li>
+                    <li><a href="#servicos" class="footer-link">Serviços</a></li>
+                    <li><a href="#sobre" class="footer-link">Sobre a empresa</a></li>
+                    <li><a href="#contato" class="footer-link">Contato</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5 class="text-white">Contato & CNPJ</h5>
+                <p><i class="bi bi-telephone-fill"></i> (13) 3877-0483<br>
+                <i class="bi bi-envelope"></i> contato@duoscontabilidade.com.br<br>
+                <i class="bi bi-file-binary"></i> CNPJ: 27.538.323/0001-90</p>
+                <p class="small">Rua Teixeira de Freitas, 17 - Apt 35<br>Capital Social: R$ 93.700,00 | Simples Nacional</p>
+            </div>
+        </div>
+        <hr class="mt-4 opacity-25">
+        <div class="text-center pt-2">
+            <p class="mb-0 small">&copy; 2025 Gabriel Santana Santos LTDA - Todos os direitos reservados. Empresa Ativa | Especialistas em elétrica residencial e industrial.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
